@@ -64,6 +64,7 @@ export function lifecycleMixin (Vue: Class<Component>) {
     vm._vnode = vnode
     // Vue.prototype.__patch__ is injected in entry points
     // based on the rendering backend used.
+    // Vue.prototype.__patch__ 基于所使用的渲染后端注入到入口点中。
     if (!prevVnode) {
       // initial render
       vm.$el = vm.__patch__(vm.$el, vnode, hydrating, false /* removeOnly */)
@@ -85,6 +86,7 @@ export function lifecycleMixin (Vue: Class<Component>) {
     }
     // updated hook is called by the scheduler to ensure that children are
     // updated in a parent's updated hook.
+    // 调度程序调用更新钩子以确保子钩子在父钩子的更新钩子中被更新。
   }
 
   Vue.prototype.$forceUpdate = function () {

@@ -11,6 +11,7 @@ if (!fs.existsSync('dist')) {
 let builds = require('./config').getAllBuilds()
 
 // filter builds via command line arg
+// 通过命令行参数构建过滤器
 if (process.argv[2]) {
   const filters = process.argv[2].split(',')
   builds = builds.filter(b => {
@@ -18,6 +19,7 @@ if (process.argv[2]) {
   })
 } else {
   // filter out weex builds by default
+  // 默认情况下过滤掉weex构建
   builds = builds.filter(b => {
     return b.output.file.indexOf('weex') === -1
   })

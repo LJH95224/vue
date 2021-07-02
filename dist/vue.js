@@ -4755,6 +4755,7 @@
     // #7573 disable dep collection when invoking data getters
     pushTarget();
     try {
+      debugger
       return data.call(vm, vm)
     } catch (e) {
       handleError(e, vm, "data()");
@@ -4973,6 +4974,8 @@
 
   function initMixin (Vue) {
     Vue.prototype._init = function (options) {
+      debugger
+      console.log('Vue 初始化')
       var vm = this;
       // a uid
       vm._uid = uid$3++;

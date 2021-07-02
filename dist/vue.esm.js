@@ -4986,6 +4986,8 @@ var uid$3 = 0;
 
 function initMixin (Vue) {
   Vue.prototype._init = function (options) {
+    debugger
+    console.log('vue 初始化')
     var vm = this;
     // a uid
     vm._uid = uid$3++;

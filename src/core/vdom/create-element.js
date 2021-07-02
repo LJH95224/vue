@@ -24,6 +24,7 @@ const SIMPLE_NORMALIZE = 1
 const ALWAYS_NORMALIZE = 2
 
 // wrapper function for providing a more flexible interface
+// 包装器函数，提供更灵活的接口
 // without getting yelled at by flow
 export function createElement (
   context: Component,
@@ -80,6 +81,7 @@ export function _createElement (
     }
   }
   // support single function children as default scoped slot
+  // 支持单函数子作为默认作用域槽
   if (Array.isArray(children) &&
     typeof children[0] === 'function'
   ) {
@@ -98,6 +100,7 @@ export function _createElement (
     ns = (context.$vnode && context.$vnode.ns) || config.getTagNamespace(tag)
     if (config.isReservedTag(tag)) {
       // platform built-in elements
+      // HTML内置的基础标签
       if (process.env.NODE_ENV !== 'production' && isDef(data) && isDef(data.nativeOn) && data.tag !== 'component') {
         warn(
           `The .native modifier for v-on is only valid on components but it was used on <${tag}>.`,
@@ -115,6 +118,7 @@ export function _createElement (
       // unknown or unlisted namespaced elements
       // check at runtime because it may get assigned a namespace when its
       // parent normalizes children
+      // 未知或未列出的名称空间元素会在运行时进行检查，因为当它的父元素规范化子元素时，可能会给它分配一个名称空间
       vnode = new VNode(
         tag, data, children,
         undefined, undefined, context
